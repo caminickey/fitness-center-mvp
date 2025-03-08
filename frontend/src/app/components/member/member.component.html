@@ -1,0 +1,18 @@
+<div class="container">
+    <h2>Member Management</h2>
+  
+    <form (submit)="addMember()">
+      <input type="text" [(ngModel)]="newMember.name" placeholder="Name" required>
+      <input type="email" [(ngModel)]="newMember.email" placeholder="Email" required>
+      <input type="text" [(ngModel)]="newMember.phoneNumber" placeholder="Phone Number" required>
+      <button type="submit">Add Member</button>
+    </form>
+  
+    <ul>
+      <li *ngFor="let member of members">
+        {{ member.name }} - {{ member.email }} - {{ member.phoneNumber }}
+        <button (click)="deleteMember(member.id!)">Delete</button>
+      </li>
+    </ul>
+  </div>
+  
